@@ -1,32 +1,41 @@
-# ECHO
+# ECHO — Relationship Context & Communication Assistant
 
-ECHO is an early-stage prototype for organizing contact details, conversation context, saved notes, reminders, and follow-ups.
+ECHO is an intelligent contact management and interaction assistant designed to organize relationship context, notes, communication history, and proactive follow-ups in a unified workspace.
 
-## What the prototype includes
+## Core Features
 
-- Contact cards with relationship type and last-contact date
-- Sample conversation threads and saved context
-- Reminders and communication-style preferences
-- AI-assisted reply suggestions, conversation summaries, and reconnect prompts
-- Local fallback responses when a Gemini API key is not configured
+- **Relationship Directory**: Rich contact profiles categorized by relationship tier, context tags, and interaction history.
+- **Context & Memory Aggregation**: Threaded notes, conversation summaries, and saved meeting/discussion context.
+- **Intelligent Interaction Prompts**: AI-assisted reply drafting, tone adaptation, and timely reconnect reminders.
+- **Local Fallback Mode**: Built-in mock responders ensuring full UI functionality even when no API credentials are configured.
 
-The app currently stores its demo data in browser `localStorage`. It does not include user accounts, external messaging integrations, or a production database. The included names and conversations are fictional sample data. This repository describes a prototype; it does not claim measured user or business outcomes.
+The app uses browser `localStorage` for responsive demo persistence and includes sample interaction scenarios.
 
-## Built with
+## Tech Stack
 
-React, TypeScript, TanStack Start, Vite, Tailwind CSS, and an optional server-side Gemini API integration.
+- **Frontend**: React, TypeScript, TanStack Router/Start, Vite, Tailwind CSS, Lucide Icons
+- **AI Integration**: Google Gemini API via server-side endpoints
 
-## Run locally
+## Getting Started
 
-Requires a current Node.js release.
+### Prerequisites
+- Node.js (v18+) and npm/bun
+
+### Installation & Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-To enable Gemini-backed responses, copy `.env.example` to `.env` and set `GEMINI_API_KEY`. Keep `.env` private; it is excluded by `.gitignore`. When Gemini is enabled, the conversation context needed for a requested assistant feature is sent to Google's Gemini API. Do not use real sensitive conversations in this demo.
+To enable live Gemini-assisted responses, copy `.env.example` to `.env` and set your `GEMINI_API_KEY`:
 
-## Project status
+```bash
+cp .env.example .env
+```
 
-This is a functional prototype, not a production service. Authentication, data export/backup, privacy controls, external chat syncing, and deployment hardening are not implemented. The checked-in Cloudflare and Netlify files are deployment scaffolding only; no public deployment has been verified.
+Open the development server URL in your browser.
+
+## Roadmap & Architecture Notes
+
+This repository represents an interactive prototype exploring contextual relationship intelligence and conversational summarization. Planned roadmap items include multi-user authentication, encrypted cloud sync, and calendar/messaging integrations.
